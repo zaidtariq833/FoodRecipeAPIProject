@@ -1,0 +1,160 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(231, 241, 240);
+  background: linear-gradient(
+    90deg,
+    rgba(231, 241, 240, 1) 27%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.mainDiv {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.image_recipe {
+  width: 200px;
+  border-radius: 10px;
+}
+
+.caloriesDiv {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.div_img {
+  display: flex;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  align-items: start;
+  gap: 20px;
+  width: 635px;
+}
+
+.health_text {
+  font-weight: bold;
+  color: #000;
+}
+
+.search_empty {
+  display: flex;
+  align-items: center;
+  height: 50vh;
+  justify-content: center;
+}
+
+.search_empty_text {
+  color: dodgerblue;
+}
+
+.input_search_recipe {
+  padding: 20px;
+  font-size: 15px;
+  margin-top: 20px;
+  border-radius: 40px;
+  border: none;
+}
+
+.input_search_recipe:focus {
+  padding: 20px;
+  font-size: 15px;
+  margin-top: 20px;
+  border-radius: 40px;
+  border: none;
+}
+
+.input_search_recipe::placeholder {
+  font-size: 15px;
+}
+
+.input_search_recipe:focus {
+  padding: 20px;
+  font-size: 20px;
+}
+
+.cards_recipe {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  gap: 10px;
+}
+
+.healthLabels {
+  background-color: skyblue;
+  color: #fff;
+  font-weight: bold;
+  border: 1px solid dodgerblue;
+  border-radius: 10px;
+  font-size: 12px;
+  padding: 5px;
+  white-space: nowrap;
+}
+
+.info_Recipe {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.recipe_name,
+.cuisine_type,
+.calories {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.healthDiv {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 15px;
+  gap: 10px;
+  /* display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-top: 15px; */
+}
+
+.health_labels {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  margin-left: 20px;
+}
+
+.recipeLabel {
+  color: #000;
+  font-weight: bold;
+}
+
+.cuisineTypeLabel {
+  color: #000;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.cuisineType {
+  color: #000;
+  font-weight: 100;
+}
+
+.calories_num {
+  color: #000;
+  font-weight: 100;
+}
+
+.recipeType {
+  color: #000;
+  font-weight: 100;
+  text-align: justify;
+}
