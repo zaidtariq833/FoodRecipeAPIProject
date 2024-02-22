@@ -1,10 +1,12 @@
-import './App.css';
-import Recipe from './Recipe';
+import "./App.css";
+import Recipe from "./Recipe";
+import { Routes, Route } from "react-router-dom";
+import RecipeInfo from "./RecipeInfo";
 
 function App() {
   return (
     <div className="App">
-     <Recipe />
+      <Recipe />
     </div>
   );
 }

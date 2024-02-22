@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 const Recipe = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
+  const app_id = "8cace501";
+  const app_key = "dbf682ac950f7e11429b2af073644609";
 
   const userSearch = (e) => {
     setSearch(e.target.value);
@@ -14,14 +16,17 @@ const Recipe = () => {
 
   useEffect(() => {
     const fetchRecipes = async () => {
-      const api = `https://api.edamam.com/search?q=${search}&app_id=8cace501&app_key=dbf682ac950f7e11429b2af073644609`;
-      const fetch = await axios.get(api);
-      setRecipes(fetch.data.hits);
+      try {
+        const api = `https://api.edamam.com/search?q=${search}&app_id=${app_id}&app_key=${app_key}`;
+        const fetch = await axios.get(api);
+        setRecipes(fetch.data.hits);
+      } catch (error) {
+        console.log("Error in fetching recipes", error);
+      }
     };
     fetchRecipes();
   }, [search]);
 
-  console.log(recipes, "recipes checking");
   return (
     <>
       <input
@@ -76,6 +81,13 @@ const Recipe = () => {
                         ))}
                     </div>
                   </div>
+                  <Link
+                    to={`/recipeInfo/${encodeURIComponent(
+                      JSON.stringify(data.recipe)
+                    )}`}
+                  >
+                    See more
+                  </Link>
                 </div>
               </div>
             </div>
