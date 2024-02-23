@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Recipe.css";
-import RecipeInfo from "./RecipeInfo";
 import { Link } from "react-router-dom";
 
 const Recipe = () => {
+  document.title = "Food App"
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
   const app_id = "8cace501";
@@ -29,14 +29,16 @@ const Recipe = () => {
 
   return (
     <>
-      <input
-        type="text"
-        name="search"
-        value={search}
-        onChange={(e) => userSearch(e)}
-        className="input_search_recipe"
-        placeholder="Search Recipe..."
-      />
+      <div className="search_food">
+        <input
+          type="text"
+          name="search"
+          value={search}
+          onChange={(e) => userSearch(e)}
+          className="input_search_recipe"
+          placeholder="Search Recipe..."
+        />
+      </div>
       {search === "" ? (
         <div className="search_empty">
           <h1 className="search_empty_text">Search Your Favourite Recipe</h1>
@@ -45,7 +47,6 @@ const Recipe = () => {
         <div className="cards_recipe">
           {recipes.map((data, index) => (
             <div className="mainDiv" key={index}>
-              {console.log(index, "index")}
               <div className="div_img">
                 <img
                   src={data.recipe.image}
@@ -81,13 +82,16 @@ const Recipe = () => {
                         ))}
                     </div>
                   </div>
-                  <Link
-                    to={`/recipeInfo/${encodeURIComponent(
-                      JSON.stringify(data.recipe)
-                    )}`}
-                  >
-                    See more
-                  </Link>
+                  <div>
+                    <Link
+                      to={`/recipeInfo/${encodeURIComponent(
+                        JSON.stringify(data.recipe)
+                      )}`}
+                      style={{ color: "red", textDecoration: "none" }}
+                    >
+                      See more
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

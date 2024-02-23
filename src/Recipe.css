@@ -1,21 +1,12 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: rgb(231, 241, 240);
-  background: linear-gradient(
-    90deg,
-    rgba(231, 241, 240, 1) 27%,
-    rgba(255, 255, 255, 1) 100%
-  );
-}
-
 .mainDiv {
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+.search_food {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .image_recipe {
@@ -53,7 +44,7 @@ body {
 }
 
 .search_empty_text {
-  color: dodgerblue;
+  color: white;
 }
 
 .input_search_recipe {
@@ -97,6 +88,7 @@ body {
   font-size: 12px;
   padding: 5px;
   white-space: nowrap;
+  text-align: center;
 }
 
 .info_Recipe {
@@ -119,10 +111,6 @@ body {
   grid-template-columns: repeat(3, 1fr);
   margin-top: 15px;
   gap: 10px;
-  /* display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
-  margin-top: 15px; */
 }
 
 .health_labels {
@@ -157,4 +145,70 @@ body {
   color: #000;
   font-weight: 100;
   text-align: justify;
+}
+
+@media only screen and (max-width: 1200px) {
+  .cards_recipe {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    gap: 10px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .div_img {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .info_Recipe {
+    display: flex;
+    align-items: start;
+  }
+
+  .health_labels {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 468px) {
+  .search_empty_text {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .image_recipe {
+    width: 110px;
+  }
+
+  .search_empty_text {
+    font-size: 15px;
+  }
+
+  .recipeLabel,
+  .recipeType,
+  .health_text,
+  .cuisineTypeLabel,
+  .cuisineType {
+    font-size: 13px;
+  }
+
+  .healthLabels {
+    font-size: 10px;
+  }
+
+  .recipe_name {
+    white-space-collapse: none;
+  }
 }

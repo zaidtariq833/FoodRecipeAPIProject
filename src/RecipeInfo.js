@@ -28,7 +28,7 @@ const RecipeInfo = () => {
           </div>
           <div className="recipe_Details">
             <h3 className="label_Details">Calories:</h3>
-            <span>{jsonParsing.calories}</span>
+            <span>{jsonParsing.calories.toFixed(2)}</span>
           </div>
           <div className="recipe_Details">
             <h3 className="label_Details">Cautions:</h3>
@@ -62,7 +62,7 @@ const RecipeInfo = () => {
                     <span style={{ fontWeight: "bold", marginLeft: "10px" }}>
                       Weights:
                     </span>
-                    <span style={{ marginLeft: "10px" }}>{caution.weight}</span>
+                    <span style={{ marginLeft: "10px" }}>{caution.weight.toFixed(2)}</span>
                   </li>
                 </ul>
               );
