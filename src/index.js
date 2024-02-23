@@ -4,8 +4,8 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import RecipeInfo from "./RecipeInfo";
-import Recipe from "./Recipe";
+import RecipeInfo from "./RecipeInfo/RecipeInfo";
+import Recipe from "./Recipe/Recipe";
 
 const router = createBrowserRouter([
   {
